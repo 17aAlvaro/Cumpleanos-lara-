@@ -56,7 +56,7 @@ body {
     align-items: center;
     color: var(--text-dark);
     overflow-x: hidden;
-    padding: 80px 20px 20px 20px;
+    padding: 110px 20px 20px 20px;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -297,13 +297,14 @@ body {
 .year-nav {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 20px;
     position: absolute;
     top: 20px;
     left: 0;
     right: 0;
     z-index: 10;
+    padding: 0 20px;
 }
 
 .year-tab {
