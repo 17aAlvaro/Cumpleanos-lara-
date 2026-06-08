@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Felices 17</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="year-nav fade-in">
+        <button class="year-tab active" data-target="view-2026">2026</button>
+        <button class="year-tab" data-target="view-2027">2027</button>
+        <button class="year-tab" data-target="view-2028">2028</button>
+        <button class="year-tab" data-target="view-2029">2029</button>
+        <button class="year-tab" data-target="view-2030">2030</button>
+    </nav>
+
+    <div class="container fade-in">
+        <!-- VISTA 2026 -->
+        <div id="view-2026" class="year-view active">
+            <header class="header">
+                <img src="regalosieño.png" alt="Regalo" class="hearts-top">
+                <h1 class="title">Felices 17<br>a la mejor</h1>
+                <p class="subtitle">Espero poder estar contigo todos los posibles</p>
+            </header>
+
+            <main class="content">
+                <div class="photo-container">
+                    <img src="fotolconlaradr4eg.jpeg" alt="Foto de cumpleaños" class="photo" id="mainPhoto">
+                    <div class="photo-frame"></div>
+                </div>
+
+                <div class="countdown-card">
+                    <h3 class="countdown-title">Cuenta atrás para los 18:</h3>
+                    <div class="timer">
+                        <div class="time-box"><span id="days-2026">00</span><span class="label">Días</span></div>
+                        <div class="time-box"><span id="hours-2026">00</span><span class="label">Hrs</span></div>
+                        <div class="time-box"><span id="mins-2026">00</span><span class="label">Min</span></div>
+                        <div class="time-box"><span id="secs-2026">00</span><span class="label">Seg</span></div>
+                    </div>
+                </div>
+
+                <button id="surpriseBtn" class="btn">
+                    <span>Abrir Sorpresa</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+
+                <div id="hiddenMessage" class="hidden-message">
+                    <p> Hola amor, ya se que te he escrito una carta pero queria tambien quería hacer algo guay y único.
+                        He hecho esta web con todo el cariño del mundo para poder poner recuerdos pequeños de cada
+                        cumple tuyo y siempre tener este detallito para ti. Por si no te lo he dicho suficientes veces,
+                        Te Quiero ❤️
+
+                    </p>
+                </div>
+            </main>
+        </div>
+
+        <!-- VISTAS BLOQUEADAS 2027-2030 -->
+        <div id="view-2027" class="year-view hidden locked-view">
+            <div class="locked-content">
+                <span class="lock-icon">🔒</span>
+                <h2>Contenido Bloqueado</h2>
+                <p>Hasta el 1 de Julio de 2027</p>
+                <div class="timer locked-timer">
+                    <div class="time-box"><span id="days-2027">00</span><span class="label">Días</span></div>
+                    <div class="time-box"><span id="hours-2027">00</span><span class="label">Hrs</span></div>
+                    <div class="time-box"><span id="mins-2027">00</span><span class="label">Min</span></div>
+                    <div class="time-box"><span id="secs-2027">00</span><span class="label">Seg</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-2028" class="year-view hidden locked-view">
+            <div class="locked-content">
+                <span class="lock-icon">🔒</span>
+                <h2>Contenido Bloqueado</h2>
+                <p>Hasta el 1 de Julio de 2028</p>
+                <div class="timer locked-timer">
+                    <div class="time-box"><span id="days-2028">00</span><span class="label">Días</span></div>
+                    <div class="time-box"><span id="hours-2028">00</span><span class="label">Hrs</span></div>
+                    <div class="time-box"><span id="mins-2028">00</span><span class="label">Min</span></div>
+                    <div class="time-box"><span id="secs-2028">00</span><span class="label">Seg</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-2029" class="year-view hidden locked-view">
+            <div class="locked-content">
+                <span class="lock-icon">🔒</span>
+                <h2>Contenido Bloqueado</h2>
+                <p>Hasta el 1 de Julio de 2029</p>
+                <div class="timer locked-timer">
+                    <div class="time-box"><span id="days-2029">00</span><span class="label">Días</span></div>
+                    <div class="time-box"><span id="hours-2029">00</span><span class="label">Hrs</span></div>
+                    <div class="time-box"><span id="mins-2029">00</span><span class="label">Min</span></div>
+                    <div class="time-box"><span id="secs-2029">00</span><span class="label">Seg</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="view-2030" class="year-view hidden locked-view">
+            <div class="locked-content">
+                <span class="lock-icon">🔒</span>
+                <h2>Contenido Bloqueado</h2>
+                <p>Hasta el 1 de Julio de 2030</p>
+                <div class="timer locked-timer">
+                    <div class="time-box"><span id="days-2030">00</span><span class="label">Días</span></div>
+                    <div class="time-box"><span id="hours-2030">00</span><span class="label">Hrs</span></div>
+                    <div class="time-box"><span id="mins-2030">00</span><span class="label">Min</span></div>
+                    <div class="time-box"><span id="secs-2030">00</span><span class="label">Seg</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
