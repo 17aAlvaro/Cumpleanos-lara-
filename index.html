@@ -23,7 +23,7 @@
             <header class="header">
                 <img src="regalosieño.png" alt="Regalo" class="hearts-top">
                 <h1 class="title">Felices 17<br>a la mejor</h1>
-                <p class="subtitle">Espero poder estar contigo todos los posibles</p>
+                <p class="subtitle">Just as long as you stand, stand by me</p>
             </header>
 
             <main class="content">
@@ -32,14 +32,39 @@
                     <div class="photo-frame"></div>
                 </div>
 
-                <div class="countdown-card">
-                    <h3 class="countdown-title">Cuenta atrás para los 18:</h3>
-                    <div class="timer">
-                        <div class="time-box"><span id="days-2026">00</span><span class="label">Días</span></div>
-                        <div class="time-box"><span id="hours-2026">00</span><span class="label">Hrs</span></div>
-                        <div class="time-box"><span id="mins-2026">00</span><span class="label">Min</span></div>
-                        <div class="time-box"><span id="secs-2026">00</span><span class="label">Seg</span></div>
+
+                <div class="music-player">
+                    <div class="player-card">
+                        <div class="vinyl-container">
+                            <img src="standbyme_cover.png" alt="Portada de Stand by Me" class="vinyl-disc" id="playerCover">
+                            <div class="vinyl-center"></div>
+                        </div>
+                        <div class="track-info">
+                            <span class="track-title">Stand by Me</span>
+                            <span class="track-artist">Ben E. King</span>
+                        </div>
+                        <div class="player-controls">
+                            <button id="playPauseBtn" class="control-btn play" aria-label="Reproducir">
+                                <svg id="playIcon" class="control-icon" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21"></polygon>
+                                </svg>
+                                <svg id="pauseIcon" class="control-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+                                    <rect x="6" y="4" width="4" height="16"></rect>
+                                    <rect x="14" y="4" width="4" height="16"></rect>
+                                </svg>
+                            </button>
+                            <div class="progress-container" id="progressContainer">
+                                <div class="progress-bar" id="progressBar"></div>
+                            </div>
+                            <span class="time-display" id="timeDisplay">0:00</span>
+                            <a href="https://open.spotify.com/track/3vYYoqjsyie1B34V146vYY" target="_blank" class="spotify-link" title="Escuchar en Spotify">
+                                <svg viewBox="0 0 24 24" fill="currentColor" class="spotify-icon">
+                                    <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.893-.982-.336.075-.668-.135-.744-.47-.077-.337.136-.669.472-.745 3.848-.877 7.147-.492 9.82 1.144.293.18.385.564.205.86zm1.224-2.72c-.226.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.08-1.182-.413.125-.847-.107-.972-.52-.125-.413.107-.847.52-.972 3.674-1.115 8.243-.57 11.346 1.34.367.227.487.708.26 1.074zm.106-2.833c-3.262-1.937-8.648-2.116-11.758-1.172-.5.152-1.025-.133-1.177-.633-.15-.5.133-1.025.633-1.177 3.585-1.088 9.53-.883 13.284 1.345.45.267.6.845.333 1.295-.267.45-.845.6-1.295.333z"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
+                    <audio id="audio-2026" src="standbyme (yt).mp3" preload="auto"></audio>
                 </div>
 
                 <button id="surpriseBtn" class="btn">
