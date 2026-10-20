@@ -10,69 +10,198 @@
 
 <body class="love-page">
 
-    <!-- Partículas flotantes de corazones -->
-    <div class="particles" id="particles"></div>
+
 
     <div class="love-container fade-in">
 
         <div class="photo-wrapper">
             <div class="photo-ring"></div>
-            <img src="fotolconlaradr4eg.jpeg" alt="Lara" class="love-photo" id="mainPhoto">
+            <img src="IMG_2753.jpeg" alt="Lara" class="love-photo" id="mainPhoto">
         </div>
 
         <h1 class="love-title">Para Lara</h1>
 
         <div class="love-text">
             <p>
-                Hola Lara, no se si llegaras a leer esto alguna vez ya sea por casualidad, que te acuerdes del regalo o sea lo que sea, pero ojalá llegues a leerlo alguna vez.
+                Hola Lara, ojalá algún día llegues a leer esto.
             </p>
             <p>
-                No se en que momento te empecé a ver con ojos de amor en vez de amistad, y aunque eso me haya hecho pasar los momentos mas felices de mi vida, puede que haya sido de las mayores cagadas que he hecho en mi vida al parecer. Derrepente de un día para otro, decidí que una persona que simplemente me caía bien y tal, acabase siendo un amor mas allá de lo común. Creo que no hace falta mencionar todo lo que nos ha pasado, esta mas que sobrepensado por ambas partes, pero quiero intentar quedarme con la conciencia tranquila de que en ningún momento he dejado de demostrarte lo tanto que te he querido y amado. Perdón si quizás mi forma de amar era demasiada para ti, porque si, mi forma de amar esta mas que clara, y es que si amo, amo mucho. Creo que todo esto viene en parte del hecho de que nunca he sentido tanto amor por una persona, y a raíz de ello pues, lo ultimo que quería hacer era perderlo, no?
-            </p>
-
-            <p>
-                Nuestros caminos parece que ya, esta vez si, se separan en la vida. Parecía que el momento de que nos separaremos del todo nunca llegaría como tal, siempre que si volvemos, que si una cosa que si la otra… Nunca hubiese imaginado todo lo que me ha dado tiempo a vivir contigo, y por todos esos buenos momentos, estoy mas que agradecidísimo. El pensar que lo mas probable es que no vuelva a saber de ti, y que no estés junto a mi me sienta como una puñalada en el pecho. Puede ser que mi mayor cagada haya sido ilusionarme con alguien que no remaba a mi favor, ni construía ese futuro con ambos juntos, y que tenía "muy presente" el hecho de que pudiésemos tomar rumbos distintos en nuestras vidas y yo como un ciego y un tonto, no fui consciente aunque me matase por dentro escuchar eso.
-            </p>
-            <p>
-                No quiero ni mucho menos olvidar todo el daño que le has podido hacer a la persona que mas te quería, porque por quererte tanto, me convertí en alguien super manipulable y vulnerable, que pasase lo que pasase, hicieses lo que hicieses, yo (como el mejor solucionador de problemas) iba a hacer lo que hiciese falta para seguir a tu lado. Cosa que he visto que no has dado tanto de tu parte, ni has luchado tanto como yo por los dos. También he sufrido mucho en silencio. Lo he pasado bastante mal en muchos momentos en los que te he necesitado, y tú no has estado. Han habido muchas noches en las que mientras tú normalizabas algunas situaciones, yo no podía dormir, y eso junto a los demás problemas, me mataban vivo, porque sé que me quieres, obvio sé que me quieres, pero no me amas y eso es algo que me has demostrado y he sufrido pero que en ningún momento quería aceptar.
+                Nunca imaginé que alguien que empezó siendo una persona que me caía bien y tal, acabaría significando
+                tanto para mí. Me quedo con todos los buenos momentos que hemos vivido e intentare quedarme algo
+                tranquilo sabiendo que en todo momento te he demostrado todo lo que te quiero y de haber
+                intentado que las cosas funcionasen hasta el final.
             </p>
             <p>
-                Ahora ya solo me queda seguir adelante sea como sea. No sé cuanto tiempo me va a llevar tener que empezar a aceptar que ya no eres parte de mi vida, y que la persona a la que mas quiero en todo el mundo y por la que he intentado hacer todo lo posible, simplemente ha considerado que estar sin mi en su vida es lo mejor para ella, y no sabes cuanto duele tener que aceptar esto. Espero que pueda solo recordarte como algo bueno y no como la enseñanza y la ostia que me has pegado, porque esto es prácticamente un antes y un después para mi forma de ver las cosas, de pensar, etc.
+                Es cierto que muchas veces he sentido que ambos no buscábamos lo mismo y que, en ocasiones, he sido yo
+                quien más ha intentado mantener lo nuestro. Aun así, no me arrepiento de lo vivido ni de haberte
+                conocido.
             </p>
             <p>
-                Quiero decirte que espero y deseo que las casualidades de la vida nos reencuentren de una manera en la que podamos amarnos mutuamente, y aprender de todo lo que hemos pasado y dejar atrás el pasado y si hace falta resetear todo si es necesario hacerlo, y seas consciente de lo que has dejado perder, pero como he dicho al principio <strong>"DESEO"</strong> y no hace falta dar explicaciones.
+                Ahora parece que nuestros caminos se separan definitivamente, y aunque me cueste acostumbrarme a ello,
+                entiendo que toca seguir adelante y aceptar las cosas como son.
             </p>
             <p>
-                Pienso en ti cada día, cada hora, y cada minuto. Ojalá todo pudiese volver a como era antes.
+                Espero que en el futuro podamos recordar lo nuestro con cariño y que, si la vida vuelve a cruzarnos, sea
+                en un momento en el que las cosas puedan ser diferentes.
+            </p>
+            <p>
+                Gracias por todo lo que hemos compartido. Te deseo lo mejor, de verdad.
             </p>
             <p class="love-signature">
-                Con todo el amor del mundo y muchísimo más<br><br>
-                <em>El pesado que nunca dejaría de darlo todo por ti.</em><br><br>
+                <em>El pesao que siempre daría todo por ti.</em><br><br>
                 Álvaro 🤍
             </p>
         </div>
 
+        <!-- Botón para abrir el carrusel -->
+        <p class="moments-note">He guardado aquí algunas fotos que me parecen bonitas o graciosas y que no me gustaría perder 🤍</p>
+        <button class="moments-btn" id="openCarousel" onclick="openLock()">
+            🔒 Fotos
+        </button>
 
     </div>
 
-    <script>
-        // ── Partículas de corazones ──────────────────────────────────────
-        const container = document.getElementById('particles');
-        const HEARTS = ['❤️','🤍','💫','✨'];
+    <!-- Modal Candado -->
+    <div class="lock-overlay" id="lockOverlay" onclick="handleLockOverlayClick(event)">
+        <div class="lock-modal" id="lockModal">
+            <div class="lock-icon-big">🔒</div>
+            <h2 class="lock-title">Acceso privado</h2>
+            <p class="lock-riddle">Como sé que se te dan mal las mates, tienes que resolver esta ecuación para ver las fotos 😏<br><br><span class="lock-equation">25 − 6 ÷ 3 = ?</span><br><br><em style="font-size:0.8rem;opacity:0.6">(Si la aciertas te doy 0,23 céntimos 💸)</em></p>
+            <input class="lock-input" id="lockInput" type="number" placeholder="El resultado..." autocomplete="off">
+            <p class="lock-error" id="lockError">¡Eso no es! Menos mal que no estudias mates 😂</p>
+            <button class="lock-submit" onclick="checkAnswer()">Desbloquear</button>
+        </div>
+    </div>
 
-        function spawnHeart() {
-            const el = document.createElement('span');
-            el.className = 'particle';
-            el.textContent = HEARTS[Math.floor(Math.random() * HEARTS.length)];
-            el.style.left = Math.random() * 100 + 'vw';
-            el.style.fontSize = (Math.random() * 14 + 10) + 'px';
-            el.style.animationDuration = (Math.random() * 6 + 6) + 's';
-            el.style.animationDelay = Math.random() * 3 + 's';
-            container.appendChild(el);
-            el.addEventListener('animationend', () => el.remove());
+    <!-- Modal Carrusel -->
+    <div class="carousel-overlay" id="carouselOverlay" onclick="handleOverlayClick(event)">
+        <button class="carousel-close" id="carouselClose" onclick="closeCarousel()">✕</button>
+
+        <button class="carousel-nav carousel-prev" id="carouselPrev" onclick="prevSlide()">&#8249;</button>
+
+        <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+                <div class="carousel-slide"><img src="IMG_2136.jpeg" alt="Momento 1" loading="lazy"></div>
+                <div class="carousel-slide"><img src="IMG_2753.jpeg" alt="Momento 2" loading="lazy"></div>
+                <div class="carousel-slide"><img src="IMG_2767.jpeg" alt="Momento 3" loading="lazy"></div>
+                <div class="carousel-slide"><img src="IMG_2792.jpeg" alt="Momento 4" loading="lazy"></div>
+                <div class="carousel-slide"><img src="IMG_2955.jpeg" alt="Momento 5" loading="lazy"></div>
+                <div class="carousel-slide"><img src="IMG_2961.jpeg" alt="Momento 6" loading="lazy"></div>
+                <div class="carousel-slide"><img src="IMG_7940.JPG" alt="Momento 7" loading="lazy"></div>
+                <div class="carousel-slide"><img src="fotolconlaradr4eg.jpeg" alt="Momento 8" loading="lazy"></div>
+            </div>
+        </div>
+
+        <button class="carousel-nav carousel-next" id="carouselNext" onclick="nextSlide()">&#8250;</button>
+
+        <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+
+    <script>
+
+
+        // ── Carrusel ─────────────────────────────────────────────────────
+        let currentSlide = 0;
+        const track = document.getElementById('carouselTrack');
+        const slides = track.querySelectorAll('.carousel-slide');
+        const dotsContainer = document.getElementById('carouselDots');
+        const totalSlides = slides.length;
+
+        // Crear dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+            dot.onclick = () => goToSlide(i);
+            dotsContainer.appendChild(dot);
+        });
+
+        function goToSlide(index) {
+            currentSlide = (index + totalSlides) % totalSlides;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                d.classList.toggle('active', i === currentSlide);
+            });
         }
 
-        setInterval(spawnHeart, 700);
+        function nextSlide() { goToSlide(currentSlide + 1); }
+        function prevSlide() { goToSlide(currentSlide - 1); }
+
+        // ── Candado ───────────────────────────────────────────────────────
+        function openLock() {
+            const overlay = document.getElementById('lockOverlay');
+            overlay.classList.add('visible');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('lockInput').value = '';
+            document.getElementById('lockError').style.opacity = '0';
+            setTimeout(() => document.getElementById('lockInput').focus(), 300);
+        }
+
+        function closeLock() {
+            document.getElementById('lockOverlay').classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+
+        function handleLockOverlayClick(e) {
+            if (e.target === document.getElementById('lockOverlay')) closeLock();
+        }
+
+        function checkAnswer() {
+            const val = document.getElementById('lockInput').value.trim().toLowerCase();
+            const valid = ['23'];
+            if (valid.includes(val)) {
+                // Animación de desbloqueo
+                const modal = document.getElementById('lockModal');
+                modal.classList.add('unlocking');
+                document.getElementById('lockModal').querySelector('.lock-icon-big').textContent = '🔓';
+                setTimeout(() => {
+                    closeLock();
+                    modal.classList.remove('unlocking');
+                    document.getElementById('lockModal').querySelector('.lock-icon-big').textContent = '🔒';
+                    openCarousel();
+                }, 600);
+            } else {
+                const modal = document.getElementById('lockModal');
+                modal.classList.add('shake');
+                document.getElementById('lockError').style.opacity = '1';
+                setTimeout(() => modal.classList.remove('shake'), 500);
+            }
+        }
+
+        // Enter para confirmar
+        document.getElementById('lockInput').addEventListener('keydown', e => {
+            if (e.key === 'Enter') checkAnswer();
+        });
+
+        function openCarousel() {
+            document.getElementById('carouselOverlay').classList.add('visible');
+            document.body.style.overflow = 'hidden';
+            goToSlide(0);
+        }
+
+        function closeCarousel() {
+            document.getElementById('carouselOverlay').classList.remove('visible');
+            document.body.style.overflow = '';
+        }
+
+        function handleOverlayClick(e) {
+            if (e.target === document.getElementById('carouselOverlay')) closeCarousel();
+        }
+
+        // Soporte teclado
+        document.addEventListener('keydown', e => {
+            if (!document.getElementById('carouselOverlay').classList.contains('visible')) return;
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'Escape') closeCarousel();
+        });
+
+        // Soporte swipe táctil
+        let touchStartX = 0;
+        track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        track.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) diff > 0 ? nextSlide() : prevSlide();
+        }, { passive: true });
     </script>
 </body>
 
