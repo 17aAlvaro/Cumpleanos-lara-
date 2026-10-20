@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Para Lara</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="love-page">
+
+    <!-- Partículas flotantes de corazones -->
+    <div class="particles" id="particles"></div>
+
+    <div class="love-container fade-in">
+
+        <div class="photo-wrapper">
+            <div class="photo-ring"></div>
+            <img src="fotolconlaradr4eg.jpeg" alt="Lara" class="love-photo" id="mainPhoto">
+        </div>
+
+        <h1 class="love-title">Para Lara</h1>
+
+        <div class="love-text">
+            <p>
+                Hola Lara, no se si llegaras a leer esto alguna vez ya sea por casualidad, que te acuerdes del regalo o sea lo que sea, pero ojalá llegues a leerlo alguna vez.
+            </p>
+            <p>
+                No se en que momento te empecé a ver con ojos de amor en vez de amistad, y aunque eso me haya hecho pasar los momentos mas felices de mi vida, puede que haya sido de las mayores cagadas que he hecho en mi vida al parecer. Derrepente de un día para otro, decidí que una persona que simplemente me caía bien y tal, acabase siendo un amor mas allá de lo común. Creo que no hace falta mencionar todo lo que nos ha pasado, esta mas que sobrepensado por ambas partes, pero quiero intentar quedarme con la conciencia tranquila de que en ningún momento he dejado de demostrarte lo tanto que te he querido y amado. Perdón si quizás mi forma de amar era demasiada para ti, porque si, mi forma de amar esta mas que clara, y es que si amo, amo mucho. Creo que todo esto viene en parte del hecho de que nunca he sentido tanto amor por una persona, y a raíz de ello pues, lo ultimo que quería hacer era perderlo, no?
+            </p>
+
+            <p>
+                Nuestros caminos parece que ya, esta vez si, se separan en la vida. Parecía que el momento de que nos separaremos del todo nunca llegaría como tal, siempre que si volvemos, que si una cosa que si la otra… Nunca hubiese imaginado todo lo que me ha dado tiempo a vivir contigo, y por todos esos buenos momentos, estoy mas que agradecidísimo. El pensar que lo mas probable es que no vuelva a saber de ti, y que no estés junto a mi me sienta como una puñalada en el pecho. Puede ser que mi mayor cagada haya sido ilusionarme con alguien que no remaba a mi favor, ni construía ese futuro con ambos juntos, y que tenía "muy presente" el hecho de que pudiésemos tomar rumbos distintos en nuestras vidas y yo como un ciego y un tonto, no fui consciente aunque me matase por dentro escuchar eso.
+            </p>
+            <p>
+                No quiero ni mucho menos olvidar todo el daño que le has podido hacer a la persona que mas te quería, porque por quererte tanto, me convertí en alguien super manipulable y vulnerable, que pasase lo que pasase, hicieses lo que hicieses, yo (como el mejor solucionador de problemas) iba a hacer lo que hiciese falta para seguir a tu lado. Cosa que he visto que no has dado tanto de tu parte, ni has luchado tanto como yo por los dos. También he sufrido mucho en silencio. Lo he pasado bastante mal en muchos momentos en los que te he necesitado, y tú no has estado. Han habido muchas noches en las que mientras tú normalizabas algunas situaciones, yo no podía dormir, y eso junto a los demás problemas, me mataban vivo, porque sé que me quieres, obvio sé que me quieres, pero no me amas y eso es algo que me has demostrado y he sufrido pero que en ningún momento quería aceptar.
+            </p>
+            <p>
+                Ahora ya solo me queda seguir adelante sea como sea. No sé cuanto tiempo me va a llevar tener que empezar a aceptar que ya no eres parte de mi vida, y que la persona a la que mas quiero en todo el mundo y por la que he intentado hacer todo lo posible, simplemente ha considerado que estar sin mi en su vida es lo mejor para ella, y no sabes cuanto duele tener que aceptar esto. Espero que pueda solo recordarte como algo bueno y no como la enseñanza y la ostia que me has pegado, porque esto es prácticamente un antes y un después para mi forma de ver las cosas, de pensar, etc.
+            </p>
+            <p>
+                Quiero decirte que espero y deseo que las casualidades de la vida nos reencuentren de una manera en la que podamos amarnos mutuamente, y aprender de todo lo que hemos pasado y dejar atrás el pasado y si hace falta resetear todo si es necesario hacerlo, y seas consciente de lo que has dejado perder, pero como he dicho al principio <strong>"DESEO"</strong> y no hace falta dar explicaciones.
+            </p>
+            <p>
+                Pienso en ti cada día, cada hora, y cada minuto. Ojalá todo pudiese volver a como era antes.
+            </p>
+            <p class="love-signature">
+                Con todo el amor del mundo y muchísimo más<br><br>
+                <em>El pesado que nunca dejaría de darlo todo por ti.</em><br><br>
+                Álvaro 🤍
+            </p>
+        </div>
+
+
+    </div>
+
+    <script>
+        // ── Partículas de corazones ──────────────────────────────────────
+        const container = document.getElementById('particles');
+        const HEARTS = ['❤️','🤍','💫','✨'];
+
+        function spawnHeart() {
+            const el = document.createElement('span');
+            el.className = 'particle';
+            el.textContent = HEARTS[Math.floor(Math.random() * HEARTS.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.fontSize = (Math.random() * 14 + 10) + 'px';
+            el.style.animationDuration = (Math.random() * 6 + 6) + 's';
+            el.style.animationDelay = Math.random() * 3 + 's';
+            container.appendChild(el);
+            el.addEventListener('animationend', () => el.remove());
+        }
+
+        setInterval(spawnHeart, 700);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,783 @@
+@font-face {
+    font-family: 'Relationship';
+    src: url('Relationship of mélodrame.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('SFPRODISPLAYREGULAR.OTF') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('SFPRODISPLAYMEDIUM.OTF') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url('SFPRODISPLAYBOLD.OTF') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    /* Vibrant red & warm color palette matching "Un Verano Sin Ti" aesthetic */
+    --primary: #e63946;
+    --secondary: #c9182b;
+    --bg-start: #fff0f3;
+    --bg-end: #ffccd5;
+    --text-dark: #2b0508;
+    --text-light: #800e13;
+    --white: rgba(255, 255, 255, 0.9);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* "Un Verano Sin Ti" beach sunset gradient with a glowing setting sun */
+    background:
+        radial-gradient(circle at 50% 35%, #fff699 0%, #ffd54f 15%, rgba(255, 213, 79, 0) 35%),
+        linear-gradient(to bottom, #4fc3f7 0%, #81d4fa 40%, #ffb74d 75%, #ff8a80 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    padding: 110px 20px 20px 20px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Float animation for top image */
+.hearts-top {
+    width: 300px;
+    height: auto;
+    margin: -35px auto -55px;
+    display: block;
+    animation: floatHeart 5s ease-in-out infinite;
+}
+
+@keyframes floatHeart {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-5px) rotate(1.2deg);
+    }
+}
+
+.container {
+    /* Glassmorphism effect */
+    background: var(--white);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 28px;
+    padding: 12px 24px 24px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(43, 5, 8, 0.08),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+    text-align: center;
+
+    /* Fade in animation setup */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.fade-in {
+    animation: fadeUpIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeUpIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+}
+
+.emoji {
+    display: inline-block;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.subtitle {
+    font-family: 'Relationship', cursive;
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: var(--text-light);
+    margin-bottom: 18px;
+    line-height: 1.4;
+}
+
+.photo-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Subtle glowing pulse behind the photo */
+.photo-container::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    z-index: -1;
+    opacity: 0.95;
+    animation: pulse 3s infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 10px 20px rgba(89, 13, 34, 0.15);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.photo-container:hover .photo {
+    transform: scale(1.06);
+}
+
+.dedication {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: var(--text-light);
+    padding: 0 10px;
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.35);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Shine effect on button hover */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transition: all 0.6s ease;
+}
+
+.btn:hover::after {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(230, 57, 70, 0.45);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn .icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+    display: none;
+}
+
+/* State when button is clicked */
+.btn.opened {
+    background: var(--text-dark);
+    box-shadow: 0 8px 20px rgba(43, 5, 8, 0.3);
+}
+
+.btn.opened .icon {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Hidden message container with smooth expanding transition */
+.hidden-message {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    padding: 0 20px;
+    transform: translateY(-10px);
+}
+
+.hidden-message.show {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 24px;
+    padding: 24px 20px;
+    transform: translateY(0);
+}
+
+/* Navigation Tabs */
+.year-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.year-tab {
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.year-tab:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+.year-tab.active {
+    background: var(--white);
+    color: var(--primary);
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.2);
+    transform: scale(1.05);
+}
+
+/* Year Views */
+.year-view {
+    display: none;
+    animation: fadeInView 0.5s ease;
+}
+
+.year-view.active {
+    display: block;
+}
+
+@keyframes fadeInView {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Locked Content */
+.locked-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 10px;
+    min-height: 300px;
+}
+
+.lock-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 10px 15px rgba(230, 57, 70, 0.3));
+    animation: floatHeart 4s ease-in-out infinite;
+}
+
+.locked-content h2 {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 700;
+}
+
+.locked-content p {
+    font-family: 'Relationship', cursive;
+    font-size: 1.4rem;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+/* Timers */
+.countdown-card {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    padding: 16px;
+    margin: 20px 0;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.countdown-title {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--white);
+    min-width: 65px;
+    padding: 10px 5px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(230, 57, 70, 0.15);
+}
+
+.time-box span:first-child {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.time-box .label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+}
+
+/* MUSIC PLAYER STYLE */
+.music-player {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 16px;
+    margin: 20px 0 10px 0;
+    box-shadow: 0 8px 24px rgba(43, 5, 8, 0.04),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.player-card {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: auto auto;
+    gap: 8px 12px;
+    align-items: center;
+    text-align: left;
+}
+
+.vinyl-container {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    grid-row: 1 / span 2;
+    border-radius: 50%;
+    box-shadow: 0 6px 14px rgba(89, 13, 34, 0.18);
+    background: #111;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.vinyl-disc {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #222;
+}
+
+/* Vinyl rotation animation */
+.vinyl-disc.playing {
+    animation: rotateVinyl 12s linear infinite;
+}
+
+.vinyl-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border: 4px solid #111;
+    border-radius: 50%;
+}
+
+@keyframes rotateVinyl {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.track-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.track-artist {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.control-btn {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(230, 57, 70, 0.25);
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.control-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 12px rgba(230, 57, 70, 0.35);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+.control-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.control-icon.hidden {
+    display: none;
+}
+
+.progress-container {
+    flex-grow: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--primary);
+    border-radius: 3px;
+    transition: width 0.1s linear;
+}
+
+.time-display {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+    min-width: 32px;
+    text-align: right;
+    font-family: monospace;
+}
+
+.spotify-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1DB954;
+    transition: transform 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.spotify-link:hover {
+    transform: scale(1.15);
+    color: #1ed760;
+}
+
+.spotify-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ════════════════════════════════════════════════════
+   LOVE PAGE — nueva versión del diseño
+════════════════════════════════════════════════════ */
+
+body.love-page {
+    /* Fondo degradado nocturno suave, romántico */
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(230, 100, 120, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(180, 80, 180, 0.2) 0%, transparent 60%),
+        linear-gradient(160deg, #1a0a1e 0%, #2b0a2a 40%, #0d0318 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+/* Partículas flotantes */
+.particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    bottom: -30px;
+    animation: floatUp linear forwards;
+    opacity: 0.75;
+    user-select: none;
+}
+
+@keyframes floatUp {
+    0%   { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    80%  { opacity: 0.6; }
+    100% { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
+}
+
+/* Contenedor principal */
+.love-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 32px;
+    padding: 36px 28px 32px;
+    max-width: 440px;
+    width: 100%;
+    text-align: center;
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255,255,255,0.15);
+    opacity: 0;
+    transform: translateY(24px);
+}
+
+.love-container.fade-in {
+    animation: fadeUpIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Foto */
+.photo-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 24px;
+}
+
+.photo-ring {
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e63946, #c77dff, #e63946);
+    background-size: 200% 200%;
+    animation: gradientSpin 4s linear infinite, pulse 3s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+@keyframes gradientSpin {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.love-photo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.9);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.love-photo:hover {
+    transform: scale(1.05);
+}
+
+/* Título */
+.love-title {
+    font-family: 'Relationship', cursive;
+    font-size: 2.8rem;
+    font-weight: normal;
+    color: #fff;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 20px rgba(230, 57, 70, 0.5);
+}
+
+/* Cita */
+.love-quote {
+    position: relative;
+    margin: 0 auto 28px;
+    padding: 16px 24px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 16px;
+    border-left: 3px solid rgba(230, 57, 70, 0.6);
+}
+
+.love-quote p {
+    font-family: 'Relationship', cursive;
+    font-size: 1.35rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+}
+
+.quote-mark {
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    color: rgba(230, 57, 70, 0.5);
+    line-height: 0;
+    vertical-align: -0.5rem;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.quote-mark.end {
+    vertical-align: -1rem;
+    margin-left: 4px;
+    margin-right: 0;
+}
+
+/* Texto del mensaje */
+.love-text {
+    color: rgba(255, 255, 255, 0.82);
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    text-align: left;
+    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.love-text strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.love-signature {
+    text-align: center;
+    font-family: 'Relationship', cursive;
+    font-size: 1.2rem;
+    color: rgba(230, 57, 70, 0.9);
+    margin-top: 8px;
+    text-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
+}
