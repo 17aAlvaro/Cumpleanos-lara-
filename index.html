@@ -19,44 +19,35 @@
             <img src="IMG_2753.jpeg" alt="Lara" class="love-photo" id="mainPhoto">
         </div>
 
-        <h1 class="love-title">Para Lara</h1>
 
         <div class="love-text">
             <p>
-                Hola Lara, ojalá algún día llegues a leer esto.
+                Hola Lara, no sé si leerás esto algún día pero ojalá y espero que sí.
             </p>
             <p>
-                Nunca imaginé que alguien que empezó siendo una persona que me caía bien y tal, acabaría significando
-                tanto para mí. Me quedo con todos los buenos momentos que hemos vivido e intentare quedarme algo
-                tranquilo sabiendo que en todo momento te he demostrado todo lo que te quiero y de haber
-                intentado que las cosas funcionasen hasta el final.
+                Como en los regalos te dejé lo de que al poner el móvil te saltase esto, por si los sigues guardando, pues quiero que sepas que no voy a borrar esto y hacer que desaparezca.
             </p>
             <p>
-                Es cierto que muchas veces he sentido que ambos no buscábamos lo mismo y que, en ocasiones, he sido yo
-                quien más ha intentado mantener lo nuestro. Aun así, no me arrepiento de lo vivido ni de haberte
-                conocido.
+                Es una pena que nosotros hayamos llegado hasta aquí y que probablemente ya cada uno tiremos por nuestro lado sin saber mucho el uno del otro. También es una pena que se haya acabado así de mal, porque veo peor acabar bien siguiendo queriéndote como a nadie en el mundo, que dejarlo odiándonos.
             </p>
             <p>
-                Ahora parece que nuestros caminos se separan definitivamente, y aunque me cueste acostumbrarme a ello,
-                entiendo que toca seguir adelante y aceptar las cosas como son.
+                Solo dejo esto para decirte que te voy a querer siempre y que te deseo lo mejor, que gracias por todo, por haberme hecho aprender de cosas buenas y malas y de lo guay que ha sido en muchos momentos. Ahora a tirar palante y ya digo yo.
             </p>
             <p>
-                Espero que en el futuro podamos recordar lo nuestro con cariño y que, si la vida vuelve a cruzarnos, sea
-                en un momento en el que las cosas puedan ser diferentes.
+                Espero que te hayas dado cuenta de que por lo menos te he querido de verdad, en todo momento sin excepción y que lo valores.
             </p>
             <p>
-                Gracias por todo lo que hemos compartido. Te deseo lo mejor, de verdad.
+                Sé muy feliz Lara, te quiero.
             </p>
             <p class="love-signature">
-                <em>El pesao que siempre daría todo por ti.</em><br><br>
-                Álvaro 🤍
+                <em style="color:#c0392b; font-style:italic;">Álvaro</em>
             </p>
         </div>
 
         <!-- Botón para abrir el carrusel -->
-        <p class="moments-note">He guardado aquí algunas fotos que me parecen bonitas o graciosas y que no me gustaría perder 🤍</p>
+        <p class="moments-note">He guardado aquí algunas fotos que tenía por ahí.</p>
         <button class="moments-btn" id="openCarousel" onclick="openLock()">
-            🔒 Fotos
+            Fotos
         </button>
 
     </div>
@@ -64,11 +55,10 @@
     <!-- Modal Candado -->
     <div class="lock-overlay" id="lockOverlay" onclick="handleLockOverlayClick(event)">
         <div class="lock-modal" id="lockModal">
-            <div class="lock-icon-big">🔒</div>
-            <h2 class="lock-title">Acceso privado</h2>
-            <p class="lock-riddle">Como sé que se te dan mal las mates, tienes que resolver esta ecuación para ver las fotos 😏<br><br><span class="lock-equation">25 − 6 ÷ 3 = ?</span><br><br><em style="font-size:0.8rem;opacity:0.6">(Si la aciertas te doy 0,23 céntimos 💸)</em></p>
+            <div class="lock-icon-big">&#x1F512;</div>
+            <h2 class="lock-title">Bloqueado</h2>
+            <p class="lock-riddle">Como sé que se te dan mal las mates, tienes que resolver esta ecuación para ver las fotos.<br><br><span class="lock-equation">25 − 6 ÷ 3 = ?</span><br><br><em style="font-size:0.8rem;opacity:0.6">(Si la aciertas te doy 0,23 céntimos)</em></p>
             <input class="lock-input" id="lockInput" type="number" placeholder="El resultado..." autocomplete="off">
-            <p class="lock-error" id="lockError">¡Eso no es! Menos mal que no estudias mates 😂</p>
             <button class="lock-submit" onclick="checkAnswer()">Desbloquear</button>
         </div>
     </div>
@@ -132,7 +122,6 @@
             overlay.classList.add('visible');
             document.body.style.overflow = 'hidden';
             document.getElementById('lockInput').value = '';
-            document.getElementById('lockError').style.opacity = '0';
             setTimeout(() => document.getElementById('lockInput').focus(), 300);
         }
 
@@ -152,17 +141,14 @@
                 // Animación de desbloqueo
                 const modal = document.getElementById('lockModal');
                 modal.classList.add('unlocking');
-                document.getElementById('lockModal').querySelector('.lock-icon-big').textContent = '🔓';
                 setTimeout(() => {
                     closeLock();
                     modal.classList.remove('unlocking');
-                    document.getElementById('lockModal').querySelector('.lock-icon-big').textContent = '🔒';
                     openCarousel();
                 }, 600);
             } else {
                 const modal = document.getElementById('lockModal');
                 modal.classList.add('shake');
-                document.getElementById('lockError').style.opacity = '1';
                 setTimeout(() => modal.classList.remove('shake'), 500);
             }
         }
